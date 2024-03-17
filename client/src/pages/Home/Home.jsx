@@ -8,6 +8,7 @@ import Footer from '../../components/Footer/Footer';
 import styles from './Home.module.sass';
 import carouselConstants from '../../carouselConstants';
 import Spinner from '../../components/Spinner/Spinner';
+import WhySquadhelp from '../../components/homeComponents/WhySquadhelp';
 
 const Home = props => {
   const [index, setIndex] = useState(0);
@@ -60,6 +61,7 @@ const Home = props => {
                 carouselType={carouselConstants.MAIN_SLIDER}
               />
             </div>
+            <WhySquadhelp />
             <div className={styles.container__description}>
               <h2 className={styles.blueUnderline}>Why Squadhelp?</h2>
               <div className={styles.cardContainer}>
