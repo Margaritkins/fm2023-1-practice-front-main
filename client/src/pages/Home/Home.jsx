@@ -9,6 +9,7 @@ import styles from './Home.module.sass';
 import carouselConstants from '../../carouselConstants';
 import Spinner from '../../components/Spinner/Spinner';
 import WhySquadhelp from '../../components/homeComponents/WhySquadhelp';
+import HowNameContestWork from '../../components/homeComponents/HowNameContestWork';
 
 const Home = (props) => {
   const [index, setIndex] = useState(0);
@@ -111,8 +112,9 @@ const Home = (props) => {
               </div>
             </div>
             <h2>How Do Name Contest Work?</h2>
-            <div className={styles.whiteContainer}>
-              <div className={styles.stepReverse}>
+            {/* <div className={styles.whiteContainer}> */}
+              <HowNameContestWork />
+              {/* <div className={styles.stepReverse}>
                 <div>
                   <h3>Step 1: Launch a Naming Contest</h3>
                   <p>
@@ -134,9 +136,9 @@ const Home = (props) => {
                   src={`${CONSTANTS.STATIC_IMAGES_PATH}gif/1-compressed.gif`}
                   alt="compressed"
                 />
-              </div>
-            </div>
-            <div className={styles.greenContainer}>
+              </div> */}
+            {/* </div> */}
+            {/* <div className={styles.greenContainer}>
               <div className={styles.step}>
                 <img
                   src={`${CONSTANTS.STATIC_IMAGES_PATH}gif/2-compressed-new.gif`}
@@ -158,8 +160,8 @@ const Home = (props) => {
                   </p>
                 </div>
               </div>
-            </div>
-            <div className={styles.greyContainer}>
+            </div> */}
+            {/* <div className={styles.greyContainer}>
               <div className={styles.stepReverse}>
                 <div>
                   <h3>Step 3: Rate Entries & Brainstorm with Creatives</h3>
@@ -176,8 +178,7 @@ const Home = (props) => {
                   <p>
                     <i className="fas fa-check" />
                     <span>
-                      The more entries you rate - the submissions get better and
-                      better
+                      The more entries you rate - the submissions get better and better
                     </span>
                   </p>
                 </div>
@@ -186,7 +187,7 @@ const Home = (props) => {
                   alt="compressed"
                 />
               </div>
-            </div>
+            </div> */}
             <div className={styles.headerBar}>
               <h3>Names For Sale</h3>
               <p className={styles.blueUnderline}>
