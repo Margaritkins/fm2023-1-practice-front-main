@@ -19,8 +19,7 @@ import ContestCreationPage from './pages/ContestCreation/ContestCreationPage';
 import browserHistory from './browserHistory';
 import ChatContainer from './components/Chat/ChatComponents/ChatContainer/ChatContainer';
 
-import PrivateHoc from './components/PrivateHoc/PrivateHoc';
-import OnlyNotAuthorizedUserHoc from './components/OnlyNotAuthorizedUserHoc/OnlyNotAuthorizedUserHoc';
+import{withAuth, withNotAuth} from './components/HOCs'
 
 import CONSTANTS from './constants';
 
@@ -44,23 +43,23 @@ class App extends Component {
           <Route
             exact
             path='/login'
-            component={OnlyNotAuthorizedUserHoc(LoginPage)}
+            component={withNotAuth(LoginPage)}
           />
           <Route
             exact
             path='/registration'
-            component={OnlyNotAuthorizedUserHoc(RegistrationPage)}
+            component={withNotAuth(RegistrationPage)}
           />
-          <Route exact path='/payment' component={PrivateHoc(Payment)} />
+          <Route exact path='/payment' component={withAuth(Payment)} />
           <Route
             exact
             path='/startContest'
-            component={PrivateHoc(StartContestPage)}
+            component={withAuth(StartContestPage)}
           />
           <Route
             exact
             path='/startContest/nameContest'
-            component={PrivateHoc(ContestCreationPage, {
+            component={withAuth(ContestCreationPage, {
               contestType: CONSTANTS.NAME_CONTEST,
               title: 'Company Name',
             })}
@@ -68,7 +67,7 @@ class App extends Component {
           <Route
             exact
             path='/startContest/taglineContest'
-            component={PrivateHoc(ContestCreationPage, {
+            component={withAuth(ContestCreationPage, {
               contestType: CONSTANTS.TAGLINE_CONTEST,
               title: 'TAGLINE',
             })}
@@ -76,18 +75,18 @@ class App extends Component {
           <Route
             exact
             path='/startContest/logoContest'
-            component={PrivateHoc(ContestCreationPage, {
+            component={withAuth(ContestCreationPage, {
               contestType: CONSTANTS.LOGO_CONTEST,
               title: 'LOGO',
             })}
           />
-          <Route exact path='/dashboard' component={PrivateHoc(Dashboard)} />
+          <Route exact path='/dashboard' component={withAuth(Dashboard)} />
           <Route
             exact
             path='/contest/:id'
-            component={PrivateHoc(ContestPage)}
+            component={withAuth(ContestPage)}
           />
-          <Route exact path='/account' component={PrivateHoc(UserProfile)} />
+          <Route exact path='/account' component={withAuth(UserProfile)} />
           <Route component={NotFound} />
         </Switch>
         <ChatContainer />
