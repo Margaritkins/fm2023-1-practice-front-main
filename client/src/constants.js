@@ -82,6 +82,13 @@ const PATH_CONSTANTS= {
       items: ['Terms of Service', 'Privacy Policy', 'Cookie Policy'],
     },
   ],
+  COLORS_PRICE:{
+    "Bronze":"#E0B48D",
+    "Gold":"#e8b954",
+    "Platinum":"#555",
+    "Managed":"#28d2d0",
+
+  }
 };
 
 export default PATH_CONSTANTS 

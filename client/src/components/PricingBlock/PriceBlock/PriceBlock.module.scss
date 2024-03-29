@@ -1,0 +1,21 @@
+.block {
+  box-sizing: border-box;
+  width: 20%;
+  border: 5px solid transparent;
+  padding: 0.7rem;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+  p{
+    position: relative;
+  }
+  p+em{
+    display: none;
+    position: absolute ;
+    width: 23%;
+background-color: #8fdff7;
+  }
+  p:hover+em{
+    display: block;
+  }
+}
