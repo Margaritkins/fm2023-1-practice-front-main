@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './HeaderNavMenu.module.scss';
 
 import CONSTANTS from '../../../constants';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom';
 
 const HeaderNavMenu = () => {
   return (
@@ -51,7 +52,7 @@ const HeaderNavMenu = () => {
               <a href="/">HOW IT WORKS</a>
             </li>
             <li>
-              <a href="/">PRICING</a>
+              <NavLink to="/pricing">PRICING</NavLink>
             </li>
             <li>
               <a href="/">AGENCY SERVICE</a>
