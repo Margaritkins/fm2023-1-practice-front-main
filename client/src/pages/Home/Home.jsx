@@ -11,6 +11,15 @@ import Spinner from '../../components/Spinner/Spinner';
 import WhySquadhelp from '../../components/homeComponents/WhySquadhelp';
 import HowNameContestWork from '../../components/homeComponents/HowNameContestWork';
 import HomeImages from '../../components/homeComponents/HomeImages';
+import BlocksGroup from '../../components/BlockGroup';
+
+import data from './data.json';
+const {
+  contentBlocks: {
+    title: contentBlockTitle,
+    description: contentBlockDescription,
+  },
+} = data;
 
 const Home = (props) => {
   const [index, setIndex] = useState(0);
@@ -45,6 +54,7 @@ const Home = (props) => {
                 <span>Find the Perfect Name for</span>
                 <span className={styleName}>{text}</span>
               </div>
+              <BlocksGroup content={contentBlockTitle} idSelectedItem='0'/>
               <p>
                 Launch a naming contest to engage hundreds of naming experts as
                 you’re guided through our agency-level naming process. Or,
@@ -57,6 +67,7 @@ const Home = (props) => {
                 </Link>
               </div>
             </div>
+            <BlocksGroup content={contentBlockDescription} idSelectedItem='2'/>
             <div className={styles.greyContainer}>
               <SlideBar
                 images={carouselConstants.mainSliderImages}
@@ -66,7 +77,7 @@ const Home = (props) => {
             <WhySquadhelp />
             <HomeImages />
             <h2>How Do Name Contest Work?</h2>
-              <HowNameContestWork />
+            <HowNameContestWork />
             <div className={styles.headerBar}>
               <h3>Names For Sale</h3>
               <p className={styles.blueUnderline}>
